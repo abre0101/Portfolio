@@ -35,7 +35,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: 
+    background:
         radial-gradient(circle at 10% 20%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 90% 80%, rgba(245, 87, 108, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.05) 0%, transparent 50%);
@@ -125,7 +125,7 @@ body::before {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: 
+    background:
         radial-gradient(circle at 30% 40%, rgba(102, 126, 234, 0.2) 0%, transparent 40%),
         radial-gradient(circle at 70% 60%, rgba(245, 87, 108, 0.15) 0%, transparent 40%),
         radial-gradient(circle at 50% 80%, rgba(6, 182, 212, 0.15) 0%, transparent 40%);
@@ -134,9 +134,19 @@ body::before {
 }
 
 @keyframes gradientShift {
-    0%, 100% { transform: translate(0, 0) rotate(0deg); }
-    33% { transform: translate(5%, 5%) rotate(120deg); }
-    66% { transform: translate(-5%, 5%) rotate(240deg); }
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    33% {
+        transform: translate(5%, 5%) rotate(120deg);
+    }
+
+    66% {
+        transform: translate(-5%, 5%) rotate(240deg);
+    }
 }
 
 .hero::after {
@@ -202,11 +212,12 @@ body::before {
     width: 350px;
     height: 350px;
     border-radius: 50%;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
     border: 6px solid transparent;
     background: linear-gradient(var(--dark-bg), var(--dark-bg)) padding-box,
-                linear-gradient(135deg, var(--primary-color), var(--accent)) border-box;
-    box-shadow: 
+        linear-gradient(135deg, var(--primary-color), var(--accent)) border-box;
+    box-shadow:
         0 20px 60px rgba(99, 102, 241, 0.5),
         0 0 100px rgba(34, 211, 238, 0.3),
         inset 0 0 20px rgba(99, 102, 241, 0.1);
@@ -217,17 +228,20 @@ body::before {
 
 .hero-image img:hover {
     transform: scale(1.05) rotate(2deg);
-    box-shadow: 
+    box-shadow:
         0 25px 80px rgba(99, 102, 241, 0.6),
         0 0 120px rgba(34, 211, 238, 0.4),
         inset 0 0 30px rgba(99, 102, 241, 0.2);
 }
 
 @keyframes pulse {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translate(-50%, -50%) scale(1);
         opacity: 0.2;
     }
+
     50% {
         transform: translate(-50%, -50%) scale(1.1);
         opacity: 0.3;
@@ -751,6 +765,7 @@ section {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -762,6 +777,7 @@ section {
         opacity: 0;
         transform: translateX(30px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -815,6 +831,8 @@ section {
     .hero-image img {
         width: 250px;
         height: 250px;
+        object-fit: contain;
+        object-position: center;
     }
 
     .hero-buttons {
